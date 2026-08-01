@@ -128,7 +128,7 @@ export function Footer({ onCentral }: { onCentral: () => void }) {
               </span>
             </a>
             <p className="mt-5 max-w-sm text-[14.5px] leading-relaxed text-paper/60">
-              El padrón digital del talento margariteño: para que el trabajo se quede en
+              El padrón digital del talento margaritense: para que el trabajo se quede en
               casa y cada peso contratado sostenga a una familia de aquí.
             </p>
             <ul className="mt-6 space-y-3 text-[14px] text-paper/70">
@@ -207,7 +207,7 @@ export function Footer({ onCentral }: { onCentral: () => void }) {
             </p>
             <p className="mt-2.5 text-[14.5px] leading-relaxed text-paper/60">
               Cada lunes: oficios nuevos, pedidos grandes y promos del mercado. Cero spam,
-              palabra de margariteño.
+              palabra de margaritense.
             </p>
             {sent ? (
               <p className="mt-5 rounded-lg bg-jade-500/15 px-5 py-4 text-[14.5px] font-semibold text-jade-300 ring-1 ring-jade-500/40">
