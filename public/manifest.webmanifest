@@ -1,0 +1,28 @@
+{
+  "name": "Todos los Servicios · Las Margaritas, Chiapas",
+  "short_name": "Los Servicios",
+  "description": "El directorio del talento de Las Margaritas: oficios verificados por la comunidad, precios claros y contacto directo por WhatsApp.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06170f",
+  "theme_color": "#06170f",
+  "lang": "es-MX",
+  "categories": ["business", "utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

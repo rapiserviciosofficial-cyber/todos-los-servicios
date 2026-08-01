@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-pine-950: #06170f;
+  --color-pine-900: #0a241a;
+  --color-pine-850: #0f2e21;
+  --color-pine-800: #163b2a;
+  --color-pine-700: #1f4d37;
+  --color-pine-600: #2b6348;
+
+  --color-jade-500: #3e8e63;
+  --color-jade-400: #63b185;
+  --color-jade-300: #93cead;
+  --color-jade-200: #c2e5d1;
+  --color-jade-100: #e1f2e8;
+
+  --color-gold-200: #fbe3b0;
+  --color-gold-300: #f7cf82;
+  --color-gold-400: #f2b95a;
+  --color-gold-500: #e89f31;
+  --color-gold-600: #c9811f;
+
+  --color-paper: #f1f5ea;
+  --color-paper-2: #e7efdc;
+  --color-ink: #0d2a1e;
+  --color-coral: #de6e53;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-slow: marquee 55s linear infinite;
+  --animate-spin-slow: spin-slow 26s linear infinite;
+  --animate-floaty: floaty 7s ease-in-out infinite;
+  --animate-kenburns: kenburns 16s ease-in-out infinite alternate;
+  --animate-pop: pop 0.45s cubic-bezier(0.2, 0.7, 0.3, 1.2) both;
+  --animate-pulse-dot: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+@keyframes pop {
+  from { transform: scale(0.92); opacity: 0.3; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+@keyframes rise {
+  from { transform: translateY(112%); }
+  to { transform: translateY(0); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px;
+  }
+  body {
+    @apply bg-pine-950 text-paper font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-gold-400);
+    color: var(--color-pine-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-pine-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-pine-700);
+    border-radius: 8px;
+    border: 2px solid var(--color-pine-950);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-600);
+  }
+}
+
+@layer components {
+  /* ---- scroll reveal ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--d, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- line-mask headline reveal ---- */
+  .mask-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+  }
+  .mask-line > span {
+    display: block;
+    transform: translateY(112%);
+    animation: rise 0.95s cubic-bezier(0.19, 0.7, 0.22, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  /* ---- marquee ---- */
+  .marquee {
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--speed, 30s) linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* ---- film-grain overlay ---- */
+  .noise::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* ---- nav link underline draw ---- */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background: var(--color-gold-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal,
+  .mask-line > span {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}
