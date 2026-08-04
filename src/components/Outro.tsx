@@ -42,7 +42,7 @@ export function CtaBand() {
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.0] tracking-tight text-pine-950 sm:text-6xl xl:text-7xl">
+            <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.0] tracking-tight text-white-950 sm:text-6xl xl:text-7xl">
               ¿Tienes un oficio?
               <br />
               Las Margaritas está
@@ -51,9 +51,8 @@ export function CtaBand() {
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-pine-900/80">
-              Publica tu ficha hoy y empieza a recibir solicitudes de tu colonia, de los
-              barrios y de los ejidos. Gratis para siempre en el plan Semilla.
+            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-white/80
+             Sumate como prestador de servicios hoy y empieza a recibir solicitudes de tu colonia, de los barrios y de los ejidos. Gratis para siempre en el plan Semilla.
             </p>
           </Reveal>
           <Reveal delay={300}>
