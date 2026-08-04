@@ -129,11 +129,11 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
             ))}
             <li className="pt-4">
               <a
-                href="#unete"
+                href="https://wa.me/529632252742?text=Hola%20quiero%20sumarme%20como%20prestador%20de%20servicios%20en%20Las%20Margaritas"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center gap-2 rounded-full bg-gold-400 px-5 py-3.5 font-semibold text-pine-950 transition-colors hover:bg-gold-300"
               >
-                Publica tu talento <IconArrow className="h-4 w-4" />
+                Sumate como prestador de servicios <IconArrow className="h-4 w-4" />
               </a>
             </li>
             <li>
