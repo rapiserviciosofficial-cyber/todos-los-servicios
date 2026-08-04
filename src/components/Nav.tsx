@@ -75,10 +75,10 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
             <IconPhone className="h-5 w-5" />
           </button>
           <a
-            href="#unete"
+            href="https://wa.me/529632252742?text=Hola%20quiero%20sumarme%20como%20prestador%20de%20servicios%20en%20Las%20Margaritas"
             className="group hidden items-center gap-2 rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-500/25 sm:inline-flex"
           >
-            Publica tu talento
+           Sumate como prestador de servicios
             <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
 
