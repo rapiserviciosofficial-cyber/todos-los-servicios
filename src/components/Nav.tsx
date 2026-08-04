@@ -37,7 +37,7 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
       >
         {/* Logo */}
         <a href="#inicio" className="group flex items-center gap-3" aria-label="Todos los Servicios — inicio">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-gold-400 text-pine-950 transition-transform duration-500 group-hover:rotate-90">
+          <span className="grid h-11 w-11 place-items-center rounded-full bg-gold-400 text-white-950 transition-transform duration-500 group-hover:rotate-90">
             <AsterFlower className="h-5 w-5" />
           </span>
           <span className="leading-none">
@@ -76,7 +76,7 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
           </button>
           <a
             href="https://wa.me/529632252742?text=Hola%20quiero%20sumarme%20como%20prestador%20de%20servicios%20en%20Las%20Margaritas"
-            className="group hidden items-center gap-2 rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-500/25 sm:inline-flex"
+            className="group hidden items-center gap-2 rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-white-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-500/25 sm:inline-flex"
           >
            Sumate como prestador de servicios
             <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
