@@ -24,7 +24,7 @@ export function CtaBand() {
             {[0, 1].map((half) => (
               <span key={half} className="flex shrink-0 items-center gap-10 whitespace-nowrap pr-10">
                 {Array.from({ length: 4 }).map((_, k) => (
-                  <span key={k} className="font-display text-[92px] font-extrabold uppercase leading-none tracking-tight text-pine-950 sm:text-[120px]">
+                  <span key={k} className="font-display text-[92px] font-extrabold uppercase leading-none tracking-tight text-white sm:text-[120px]"
                     Súbete al directorio ✳
                   </span>
                 ))}
@@ -37,7 +37,7 @@ export function CtaBand() {
       <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
         <div className="max-w-3xl">
           <Reveal dir="left">
-            <p className="inline-flex items-center gap-2.5 rounded-full bg-pine-950/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-pine-900">
+           <p className="inline-flex items-center gap-2.5 rounded-full bg-white/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
               <AsterFlower className="h-3.5 w-3.5" /> Convocatoria abierta
             </p>
           </Reveal>
@@ -68,8 +68,7 @@ export function CtaBand() {
               </a>
               <a
                 href="#directorio"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-pine-950/70 px-8 py-[14px] text-[15px] font-bold text-pine-950 transition-all duration-300 hover:-translate-y-1 hover:bg-pine-950 hover:text-gold-300"
-              >
+className="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-8 py-[14px] text-[15px] font-bold text-white transition-all duration-300 hover:bg-white hover:text-pine-950"              >
                 Explorar el directorio
               </a>
             </div>
