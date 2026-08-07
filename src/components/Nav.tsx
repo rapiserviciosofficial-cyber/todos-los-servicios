@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "../utils/cn";
-import { AsterFlower, IconArrow, IconPhone } from "./icons";
+import { AsterFlower, IconArrow, IconPhone, IconShare } from "./icons";
 
 const links = [
   { href: "#directorio", label: "Directorio" },
@@ -14,6 +14,25 @@ const links = [
 export default function Nav({ onCentral }: { onCentral: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const shareSite = async () => {
+    const shareData = {
+      title: "Todos los Servicios — Las Margaritas",
+      text: "Encuentra servicios y talento local de Las Margaritas, Chiapas.",
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+      await navigator.clipboard.writeText(window.location.href);
+      window.alert("¡Enlace copiado! Ya puedes compartirlo.");
+    } catch {
+      // El usuario pudo cancelar el menú nativo de compartir.
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 28);
@@ -65,6 +84,16 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
         </ul>
 
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={shareSite}
+            aria-label="Compartir Todos los Servicios"
+            title="Compartir esta página"
+            className="hidden items-center gap-2 rounded-full border border-paper/15 px-4 py-2.5 text-[13px] font-semibold text-paper/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-400/70 hover:text-gold-300 sm:inline-flex"
+          >
+            <IconShare className="h-4 w-4" />
+            Compartir
+          </button>
           <button
             type="button"
             onClick={onCentral}
@@ -135,6 +164,18 @@ export default function Nav({ onCentral }: { onCentral: () => void }) {
               >
                 Sumate como prestador de servicios <IconArrow className="h-4 w-4" />
               </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  void shareSite();
+                }}
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-paper/20 px-5 py-3 font-semibold text-paper/80 transition-colors hover:border-gold-400 hover:text-gold-300"
+              >
+                <IconShare className="h-4 w-4" /> Compartir página
+              </button>
             </li>
             <li>
               <button

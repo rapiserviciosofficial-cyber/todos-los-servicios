@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cn } from "../utils/cn";
 import { categories, services, WA_LINK } from "../data";
-import { IconArrow, IconPin, IconSeal, IconStar, IconWhatsapp } from "./icons";
+import { IconArrow, IconCheck, IconPhone, IconPin, IconSeal, IconStar, IconWhatsapp } from "./icons";
 import { Reveal } from "./motion";
 
 export default function Showcase() {
@@ -39,6 +39,64 @@ export default function Showcase() {
             </p>
           </Reveal>
         </div>
+
+        {/* Oficina Gestora — tarjeta institucional destacada */}
+        <Reveal delay={40}>
+          <article className="relative mb-10 overflow-hidden rounded-2xl bg-paper text-ink shadow-2xl shadow-pine-950/30 ring-1 ring-gold-400/40">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-60"
+              style={{
+                backgroundImage:
+                  "radial-gradient(600px 260px at 0% 0%, rgba(232,159,49,0.18), transparent 60%), radial-gradient(500px 300px at 100% 100%, rgba(62,142,99,0.12), transparent 60%)",
+              }}
+            />
+            <div className="relative grid items-center gap-7 p-5 sm:p-7 lg:grid-cols-[220px_1fr_auto] lg:gap-9">
+              <div className="overflow-hidden rounded-xl bg-white ring-1 ring-ink/10">
+                <img
+                  src="/images/oficina-gestora.png"
+                  alt="Logo de Oficina Gestora Las Margaritas"
+                  className="h-full max-h-[210px] w-full object-contain"
+                />
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-gold-400 px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-pine-950">
+                    Oficina oficial
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-jade-100 px-3 py-1 text-[11px] font-semibold text-pine-700">
+                    <IconCheck className="h-3.5 w-3.5" /> Servicio inicial GRATIS
+                  </span>
+                </div>
+                <h3 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-pine-900 sm:text-4xl">
+                  OFICINA GESTORA
+                </h3>
+                <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-pine-600">
+                  Centro de atención y coordinación en línea
+                </p>
+                <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-ink/65">
+                  Recibimos tu solicitud, la filtramos y te ayudamos a encontrar el servicio adecuado.
+                  Atención en línea <strong className="text-pine-800">24/7</strong>, con gestión gratuita durante la etapa inicial.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-[13px] font-semibold text-pine-800">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-pine-900 px-3.5 py-2 text-gold-300">
+                    <IconPhone className="h-3.5 w-3.5" /> +52 963 225 2742
+                  </span>
+                  <span className="text-ink/50">Sin dirección física · atención 100% en línea</span>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/529632252742?text=Hola%20Oficina%20Gestora%2C%20quiero%20solicitar%20un%20servicio%20del%20directorio."
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-400 px-6 py-3.5 text-sm font-bold text-pine-950 shadow-lg shadow-gold-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-300"
+              >
+                <IconWhatsapp className="h-4 w-4" />
+                Solicitar servicio
+              </a>
+            </div>
+          </article>
+        </Reveal>
 
         {/* tabs */}
         <Reveal delay={80}>

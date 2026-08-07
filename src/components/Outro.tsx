@@ -132,7 +132,7 @@ export function Footer({ onCentral }: { onCentral: () => void }) {
             <ul className="mt-6 space-y-3 text-[14px] text-paper/70">
               <li className="flex items-center gap-3">
                 <IconPin className="h-4 w-4 shrink-0 text-gold-400" />
-                Av. Central Pte. 12, Col. Centro — módulo del mercado, mar y vie
+                Atención y gestión 100% en línea · 24/7
               </li>
               <li className="flex items-center gap-3">
                 <IconWhatsapp className="h-4 w-4 shrink-0 text-jade-300" />

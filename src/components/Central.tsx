@@ -90,16 +90,15 @@ const STATUS_META: Record<Status, { label: string; cls: string; next: Status; ac
 /* ---------- textos listos para WhatsApp Business ---------- */
 const WA_PROFILE = `Nombre: Todos los Servicios — Las Margaritas
 Categoría: Servicios de mantenimiento
-Horario: Martes a domingo · 8:00–20:00
-Dirección: Av. Central Pte. 12, Col. Centro, Las Margaritas, Chiapas
+Atención: En línea 24/7
 Descripción: Central que te conecta con plomeros, electricistas, carpinteros, bordadoras y más de 40 oficios verificados del municipio. Precios claros y trato de vecinos.`;
 
 const WA_GREETING = `¡Hola! 👋 Bienvenido a *Todos los Servicios*, la central del talento de Las Margaritas.
 Cuéntanos qué necesitas (plomero, electricista, carpintero, bordados…) y tu colonia, y en un momento te pasamos con el oficio indicado. ✳`;
 
 const WA_AWAY = `¡Hola! Gracias por escribir a *Todos los Servicios*. 🌙
-Ahorita estamos fuera de horario: atendemos de martes a domingo, de 8:00 a 20:00.
-Déjanos tu nombre, tu colonia y el oficio que necesitas, y en cuanto abramos te conectamos con el técnico indicado. ✳`;
+Nuestra Oficina Gestora atiende en línea 24/7.
+Déjanos tu nombre, tu colonia y el oficio que necesitas, y te ayudamos a canalizarlo con el servicio indicado. ✳`;
 
 const WA_QUICK = `¡Claro que sí! Para cotizar rápido necesito:
 1️⃣ Tu nombre
@@ -709,7 +708,7 @@ export default function Central({ open, onClose }: { open: boolean; onClose: () 
                 </div>
                 <p className="mt-3 rounded-lg bg-jade-100 px-4 py-2.5 text-[12.5px] leading-snug text-pine-800">
                   Se activan en <strong>WhatsApp Business → Herramientas para el negocio</strong>.
-                  En «Mensaje de ausencia» define el horario: mar–dom, 8:00–20:00.
+                  Como la Oficina Gestora atiende en línea 24/7, puedes dejar el mensaje de ausencia desactivado o usarlo solo para avisos especiales.
                 </p>
               </article>
 
