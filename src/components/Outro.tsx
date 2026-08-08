@@ -25,7 +25,7 @@ export function CtaBand() {
               <span key={half} className="flex shrink-0 items-center gap-10 whitespace-nowrap pr-10">
                 {Array.from({ length: 4 }).map((_, k) => (
                   <span key={k} className="font-display text-[92px] font-extrabold uppercase leading-none tracking-tight text-white sm:text-[120px]"
-                    Súbete al directorio ✳
+                    Súbete al directorio >
                   </span>
                 ))}
               </span>
