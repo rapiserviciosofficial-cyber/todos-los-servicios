@@ -51,9 +51,9 @@ export function CtaBand() {
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-white/80
-             Sumate como prestador de servicios hoy y empieza a recibir solicitudes de tu colonia, de los barrios y de los ejidos. Gratis para siempre en el plan Semilla.
-            </p>
+            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-white/80">
+ Sumate como prestador de servicios hoy y empieza a recibir solicitudes...
+</p>
           </Reveal>
           <Reveal delay={300}>
             <div className="mt-9 flex flex-wrap items-center gap-4">
