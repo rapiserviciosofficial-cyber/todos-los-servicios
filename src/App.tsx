@@ -1,3 +1,4 @@
+import { ShareButton } from "./componentes/ShareButton"
 import { useState } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -40,6 +41,7 @@ export default function App() {
       <Footer onCentral={() => setCentralOpen(true)} />
       <InstallPill install={install} />
       <Central open={centralOpen} onClose={() => setCentralOpen(false)} />
+      <ShareButton />
     </div>
   );
 }
